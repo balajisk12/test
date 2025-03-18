@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Cases</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #b4f0ed;
+        }
+
+        textarea {
+            resize: vertical;
+            background-color: #b4f0ed;
+        }
+
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .specialcases-container{
+            max-width: 600px;
+            max-height: 80%;
+            overflow-y: auto;
+
+            margin: 0 auto;
+            background-color: #0e4979;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .specialcases-container::-webkit-scrollbar {
+            width: 0;
+            background: transparent; 
+              }
+    </style>
+</head>
+<body>
+    <h2>Special Cases</h2>
+
+    <div class="specialcases-container">
+    <form>
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" name="student_name" required>
+        
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" name="student_id" required>
+
+        <label for="lab">Select Lab:</label>
+        <select id="lab" name="lab" required>
+            <option value="" disabled selected>Select a Lab</option>
+            <option value="lab_a">Lab A</option>
+            <option value="lab_b">Lab B</option>
+            <option value="lab_c">Lab C</option>
+            <option value="lab_d">Lab D</option>
+        </select>
+        
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <label for="time">Select Time Slot:</label>
+        <select id="time" name="time" required>
+            <option value="" disabled selected>Select a Time Slot</option>
+            <option value="9am-11am">09:00 AM - 11:00 AM</option>
+            <option value="11am-1pm">11:00 AM - 01:00 PM</option>
+            <option value="2pm-4pm">02:00 PM - 04:00 PM</option>
+            <option value="4pm-6pm">04:00 PM - 06:00 PM</option>
+        </select>
+        
+        <label for="caseType">Select Special Case</label>
+        <select id="caseType" name="caseType" required>
+            <option value="" disabled selected>Select a case</option>
+            <option value="medical">Medical Leave</option>
+            <option value="on-duty">On Duty</option>
+            <option value="emergency">Emergency Leave</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="4" placeholder="Provide details..." required></textarea>
+
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
+</html>

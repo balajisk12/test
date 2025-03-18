@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STUDENT</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Farsan&display=swap');
+        
+        .sidenav {
+            height: 100%; 
+            width: 0; 
+            position: fixed; 
+            z-index: 1; 
+            top: 0;
+            left: 0;
+            background-color: black; 
+            overflow-x: hidden; 
+            padding-top: 50px; 
+            transition: .2s; 
+            display: flex;
+            flex-direction: column; 
+            font-family: 'Aldrich';
+
+     
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #818181;
+            display: block;
+            transition: 1s;
+            font-family: 'Aldrich';
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left 0.2s;
+            padding: 20px;
+            left: 2%;
+        }
+
+        .top {
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            height: 35px; 
+            top: 0; 
+            left: 0;
+            right: 0;
+            background-color: black;
+            text-decoration: none;
+            display: flex;
+        }
+
+        .menu-icon {
+            position: absolute;
+             left: 20px;  
+             top: 10px;   
+             color: #a8a0a0;
+             text-decoration: none;
+             font-size: 24px;  
+             cursor: pointer;
+}
+
+
+        .logout-btn {
+            position: absolute;
+            display: inline-block;
+            display: flex;
+            right: 15px;
+            top: 4px;
+            color: #a8a0a0;
+            text-decoration: none;
+            font-size: 15px; 
+        }
+
+        .heading {
+            position: relative;
+            top: 1%;
+            font-family: "Farsan", cursive;
+            font-weight: 400;
+            font-style: normal;
+            color: #a8a0a0;
+        }
+
+        .div_main {
+            background-color:#050f13;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            height: 86%; 
+            top: 47px; 
+            left: 0;
+            right: 1%;
+            overflow-y: auto; 
+            padding: 20px;
+            border-radius: 15px;
+            transition: margin-left 0.2s;
+        }
+        .body{
+            background-color:#000000;
+            font-family: 'Farsan', sans-serif;
+        }
+    </style>
+</head>
+<body class="body">
+ 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="material-symbols-outlined">menu_open</span></a>
+        <a href="#" data-target="profile" style="font-size: 22px;" onclick="loadContent(this.getAttribute('data-target'))"><span style="font-size: 20px;" class="material-symbols-outlined">person</span> Profile</a>
+        <a href="#" style="font-size: 22px;" onclick="toggleSubMenu()"><span style="font-size: 20px;" class="material-symbols-outlined">school</span> Lab Admission</a>
+        <div id="labSubMenu" style="display: none;">
+            <ul style="list-style-type: none; font-size: 15px;">
+                <a href="#"data-target="Available-slot" style="font-size: 16px;" onclick="loadContent(this.getAttribute('data-target'))"><li><span style="font-size: 16px;" class="material-symbols-outlined">data_check</span> Available slot</li></a>
+                <a href="#"data-target="Book-Slot"style="font-size: 16px;" onclick="loadContent(this.getAttribute('data-target'))"><li><span style="font-size: 13px;" class="material-symbols-outlined">toggle_on</span> Book a Slot</li></a>
+                <a href="#"data-target="Wild-Card" style="font-size: 16px;" onclick="loadContent(this.getAttribute('data-target'))"><li><span style="font-size: 13px;" class="material-symbols-outlined">repeat</span> Wild Card</li></a>
+                <a href="#"data-target="Special-Cases" style="font-size: 16px;" onclick="loadContent(this.getAttribute('data-target'))"><li><span style="font-size: 13px;" class="material-symbols-outlined">assignment_late</span> Special Cases</li></a>
+                <a href="#"data-target="Result" style="font-size: 16px;" onclick="loadContent(this.getAttribute('data-target'))"><li><span style="font-size: 11px;" class="material-symbols-outlined">density_small</span> Result</li></a>
+            </ul>
+        </div>
+        <a href="#" data-target="Change-Lab" style="font-size: 22px;" onclick="loadContent(this.getAttribute('data-target'))"><span style="font-size: 20px;" class="material-symbols-outlined">swap_horiz</span> Change Lab</a>
+        <a href="#" data-target="Labdetails" style="font-size: 22px;" onclick="loadContent(this.getAttribute('data-target'))"><span style="font-size: 20px;" class="material-symbols-outlined">info</span> Lab Details</a>
+        
+    </div>
+  
+    <div class="top">
+        <a href="#" class="menu-icon" onclick="openNav()"><span class="material-icons">&#xe3c7;</span></a>        
+        <h4 class="heading">STUDENT PORTAL</h4>
+        <div class="logout-btn"><a href="#"><span style="color: #a8a0a0;" class="material-symbols-outlined">logout</span></a></div>
+    </div>
+    
+<div id="main" class="div_main">  
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpecialLab Portal</title>
+    <style>
+        
+        .welcome-container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            height: 85%;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .enter-btn {
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .enter-btn:hover {
+            background-color: #45a049;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+
+    <div class="welcome-container">
+        <h1>Welcome to SpecialLab Portal</h1>
+        <p>Unlock your potential and explore the cutting-edge labs designed for innovators.</p>
+        <button style="font-family: Aldrich ;" class="enter-btn" onclick="openNav()">Explore</button>
+    </div>
+
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }   
+
+        function toggleSubMenu() {
+            var labSubMenu = document.getElementById("labSubMenu");
+            labSubMenu.style.display = labSubMenu.style.display === "none" ? "block" : "none";
+        }
+
+function loadContent(target) {
+    const mainDiv = document.getElementById("main");
+    mainDiv.innerHTML = ""; 
+
+    const routes = {
+        "profile": "/student_profile/",
+        "Available-slot": "/student_availableslots/",
+        "Book-Slot": "/student_bookslot/",
+        "Wild-Card": "/student_wildcard/",
+        "Special-Cases": "/student_specialcases/",
+        "Result": "/student_result/",
+        "Change-Lab": "/student_labchange/",
+        "Labdetails": "/student_labdetails/"
+    };
+
+    const url = routes[target];
+    if (url) {
+        fetch(url)
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error("Failed to load content");
+                }
+            })
+            .then(html => {
+                mainDiv.innerHTML = html;
+            })
+            .catch(error => {
+                console.error(error);
+                mainDiv.innerHTML = "<p>Error loading content.</p>";
+            });
+    }
+}
+
+        function loadHTML(url, element) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", url, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    element.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+
+</body>
+</html>
